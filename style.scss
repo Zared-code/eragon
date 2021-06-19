@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    color: white;
+}
+html{
+    font-size: 16px;
+}
+section{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    height: fit-content;
+    background: transparent;
+    width: 100%;
+    padding: 20px 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+        padding: 10px 25px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .logo {
+        font-size: 1.9rem;
+    }
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            list-style: none;
+            li {
+                padding: 0 5px;
+                a {
+                    font-size: 1.5rem;
+                    border-radius: 40px;
+                    &.active, &:hover{
+                        background: #fff;
+                        color: #161D2E;
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#hero{
+    height: 100vh;
+    background: linear-gradient(#208599, #64D2D1);
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(transparent, #161D2E);
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        object-fit: cover;
+    }
+    #btn {
+        text-decoration: none;
+        padding: 8px 30px;
+        background: #fff;
+        border-radius: 40px;
+        color: #161D2E;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        font-weight: 600;
+        letter-spacing: 2px;
+        transform: translateY(100px);
+    }
+    #dragon{
+        animation: 1s dragon ease-in-out infinite alternate-reverse forwards;
+    }
+    #behind{
+        animation: 1s back ease-in-out infinite alternate-reverse forwards;
+    }
+}
+#content{
+    background: #161D2E;
+    .text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: url("img/papyrus.jpg");
+        margin: 100px 0;
+        padding: 50px 100px;
+        border-radius: 25px;
+        border: 10px #161D2E dotted;
+        box-shadow: white 1px 1px 40px;
+        h2{
+            font-size: 4.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: rgb(17, 17, 17);
+        }
+        p{
+            max-width: 900px;
+            text-align: justify;
+            font-weight: 600;
+            line-height: 25px;
+            margin: 10px 0;
+            color: black;
+        }
+    }
+}
+
+// animation
+@keyframes dragon {
+    from{
+        transform: translateY(-10px);
+    }
+    to{
+        transform: translateY(10px);
+    }
+}
+@keyframes back {
+    from{
+        transform: translateX(-5px);
+    }
+    to{
+        transform: translateX(5px);
+    }
+}
